@@ -1,0 +1,14 @@
+# NOTE: This file is only present for testing.
+# It is not necessary for configuring the Jenkins configuration-as-code plugin
+
+version: '3'
+services:
+  jenkins:
+    build: .
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+
+    # example showing how to use environmental variables to populate variables in jcasc configuration yaml files.
+    environment:
+      - "jcasc_config_version=v1.2.3"

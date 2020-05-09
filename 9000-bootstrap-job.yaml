@@ -1,0 +1,43 @@
+jobs:
+  - script: >
+      job('bootstrap-job') {
+          scm {
+            git('https://github.com/org/jenkins-job-dsl-repo.git')
+          }
+          steps {
+            dsl {
+                external('*.groovy')
+                removeAction('DISABLE')
+                ignoreExisting()
+                additionalClasspath('lib')
+            }
+          }
+      }
+  - script: >
+      job('test-freestyle') {
+          scm {
+            git('https://github.com/LableOrg/java-maven-junit-helloworld.git')
+          }
+          steps {
+            maven('-e clean test')
+          }
+      }
+
+  - script: >
+      pipelineJob('test-pipeline') {
+        definition {
+          cps {
+            script("""\
+              pipeline {
+                agent any
+                stages {
+                  stage ('test') {
+                    steps {
+                      echo "hello"
+                    }
+                  }
+                }
+              }""".stripIndent())
+          }
+        }
+      }

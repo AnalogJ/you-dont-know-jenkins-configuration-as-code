@@ -1,0 +1,14 @@
+unclassified:
+  globalLibraries:
+    libraries:
+      - defaultVersion: "master"
+        implicit: true
+        name: "repo"
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                id: "374f214c-1232-4b6a-8507-342a91e37a69"
+                remote: "git@github.com:owner/repo.gi"
+                traits:
+                  - "gitBranchDiscovery"

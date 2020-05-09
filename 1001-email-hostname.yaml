@@ -1,0 +1,16 @@
+unclassified:
+  location:
+    adminAddress: "jenkins@example.com"
+    url: "http://localhost:8080/"
+  mailer:
+    charset: "UTF-8"
+    defaultSuffix: "@example.com"
+    smtpHost: "localhost"
+    useSsl: false
+    useTls: false
+  gitSCM:
+    createAccountBasedOnEmail: false
+    globalConfigEmail: "jenkins@example.com"
+    globalConfigName: "jenkins"
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false

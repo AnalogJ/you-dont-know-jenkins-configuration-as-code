@@ -1,0 +1,8 @@
+# DISABLED - so we don't lock ourselves out with an example authn/authz configuration
+
+#jenkins:
+#  authorizationStrategy:
+#    globalMatrix:
+#      permissions:
+#        - "Overall/Administer:admin-users"
+#        - "Overall/Administer:anonymous"

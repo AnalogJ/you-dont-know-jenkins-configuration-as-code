@@ -1,0 +1,7 @@
+security:
+  scriptApproval:
+    approvedSignatures:
+      - method java.net.URI getHost
+      - method java.lang.String indexOf int
+      - method io.jenkins.plugins.casc.ConfigurationAsCode configure
+      - staticMethod io.jenkins.plugins.casc.ConfigurationAsCode get

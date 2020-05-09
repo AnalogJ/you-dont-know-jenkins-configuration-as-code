@@ -1,0 +1,16 @@
+# DISABLED - so we don't lock ourselves out with an example authn/authz configuration
+
+#jenkins:
+#  securityRealm:
+#    saml:
+#      binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+#      displayNameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+#      emailAttributeName: "email"
+#      groupsAttributeName: "groups"
+#      idpMetadataConfiguration:
+#        period: 0
+#        url: "https://saml.corp.example.com"
+#        xml: "XML PAYLOAD SAML METADATA"
+#      maximumAuthenticationLifetime: 86400
+#      usernameAttributeName: "username"
+#      usernameCaseConversion: "none"

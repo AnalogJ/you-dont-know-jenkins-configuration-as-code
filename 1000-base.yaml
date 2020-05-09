@@ -1,0 +1,8 @@
+jenkins:
+  numExecutors: 10
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  systemMessage: "Jenkins Server - Managed by Jenkins Configuration as Code - Configs ${jcasc_config_version:-1.0.0}"
