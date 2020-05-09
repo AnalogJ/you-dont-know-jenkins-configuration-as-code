@@ -49,6 +49,7 @@ kubernetes:1.25.3
 pipeline-stage-view:2.13
 workflow-support:3.4
 jackson2-api:2.10.3
+matrix-auth:2.6.1
 trilead-api:1.0.6
 scm-api:2.6.3
 pipeline-stage-tags-metadata:1.6.0
