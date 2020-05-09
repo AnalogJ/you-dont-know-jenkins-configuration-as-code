@@ -20,7 +20,7 @@ pipeline-rest-api:2.13
 pipeline-build-step:2.12
 oauth-credentials:0.4
 jsch:0.1.55.2
-junit:1.28
+junit:1.29
 workflow-cps-global-lib:2.16
 ssh-credentials:1.18.1
 saml:1.1.5
