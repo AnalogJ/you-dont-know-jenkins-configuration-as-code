@@ -1,6 +1,6 @@
 # DISABLED - so we don't lock ourselves out with an example authn/authz configuration
 
-#jenkins:
+jenkins:
 #  securityRealm:
 #    saml:
 #      binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"

@@ -1,0 +1,280 @@
+# NOTE: This file is used to specify the Jenkins plugins necessary for our installation.
+# Unfortunately, our test framework (Gradle) uses a different plugin loader than our Jenkins docker image.
+# We'll create a full fidelity file here, and parse out the content we need for the docker plugin script.
+#
+# See
+# - https://github.com/sheehan/job-dsl-gradle-example/blob/master/build.gradle#L66-L70
+# - https://github.com/jenkinsci/docker#plugin-version-format
+#
+# Generated with the following command.
+# Jenkins.instance.pluginManager.plugins
+# .collect {
+# """\
+# - group: ${it.manifest.mainAttributes.getValue("Group-Id")}
+#   name: ${it.shortName}
+#   version: ${it.version}
+# """
+# }
+# .each { println it }
+#
+
+plugins:
+- group: org.jenkins-ci.plugins
+  name: mailer
+  version: 1.32
+
+- group: org.jenkins-ci.ui
+  name: jquery-detached
+  version: 1.2.1
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-scm-step
+  version: 2.11
+
+- group: org.jenkins-ci.plugins
+  name: credentials-binding
+  version: 1.23
+
+- group: org.jenkins-ci.plugins
+  name: pipeline-milestone-step
+  version: 1.3.1
+
+- group: org.jenkins-ci.plugins
+  name: authentication-tokens
+  version: 1.4
+
+- group: org.jenkins-ci.plugins
+  name: cloudbees-folder
+  version: 6.14
+
+- group: org.jenkins-ci.plugins
+  name: variant
+  version: 1.3
+
+- group: org.jenkins-ci.plugins
+  name: kubernetes-client-api
+  version: 4.9.2-2
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-job
+  version: 2.39
+
+- group: org.jenkinsci.plugins
+  name: pipeline-model-declarative-agent
+  version: 1.1.1
+
+- group: org.jenkins-ci.plugins
+  name: pipeline-stage-step
+  version: 2.5
+
+- group: org.jenkinsci.plugins
+  name: pipeline-model-extensions
+  version: 1.7.0
+
+- group: org.jenkinsci.plugins
+  name: kubernetes-credentials
+  version: 0.7.0
+
+- group: org.jenkins-ci.plugins
+  name: structs
+  version: 1.20
+
+- group: org.jenkins-ci.plugins
+  name: jdk-tool
+  version: 1.4
+
+- group: org.jenkins-ci.plugins.pipeline-stage-view
+  name: pipeline-rest-api
+  version: 2.13
+
+- group: org.jenkins-ci.plugins
+  name: pipeline-build-step
+  version: 2.12
+
+- group: org.jenkins-ci.plugins
+  name: oauth-credentials
+  version: 0.4
+
+- group: org.jenkins-ci.plugins
+  name: jsch
+  version: 0.1.55.2
+
+- group: org.jenkins-ci.plugins
+  name: junit
+  version: 1.29
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-cps-global-lib
+  version: 2.16
+
+- group: org.jenkins-ci.plugins
+  name: ssh-credentials
+  version: 1.18.1
+
+- group: org.jenkins-ci.plugins
+  name: saml
+  version: 1.1.6
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-durable-task-step
+  version: 2.35
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-aggregator
+  version: 2.6
+
+- group: org.6wind.jenkins
+  name: lockable-resources
+  version: 2.8
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-basic-steps
+  version: 2.20
+
+- group: org.jenkins-ci.plugins
+  name: job-dsl
+  version: 1.77
+
+- group: org.jenkins-ci.plugins
+  name: command-launcher
+  version: 1.4
+
+- group: org.jenkins-ci.plugins
+  name: branch-api
+  version: 2.5.6
+
+- group: io.jenkins.plugins
+  name: snakeyaml-api
+  version: 1.26.4
+
+- group: org.jenkins-ci.plugins
+  name: docker-commons
+  version: 1.17
+
+- group: org.jenkins-ci.plugins
+  name: script-security
+  version: 1.74
+
+- group: org.jenkins-ci.plugins
+  name: matrix-project
+  version: 1.16
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-api
+  version: 2.40
+
+- group: org.jenkins-ci.ui
+  name: momentjs
+  version: 1.1.1
+
+- group: org.jenkins-ci.ui
+  name: ace-editor
+  version: 1.1
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-multibranch
+  version: 2.21
+
+- group: org.jenkins-ci.plugins
+  name: docker-workflow
+  version: 1.23
+
+- group: org.jenkins-ci.plugins
+  name: git
+  version: 4.3.0
+
+- group: org.jenkins-ci.plugins
+  name: pipeline-input-step
+  version: 2.11
+
+- group: io.jenkins
+  name: configuration-as-code
+  version: 1.41
+
+- group: org.jenkins-ci.plugins
+  name: pipeline-graph-analysis
+  version: 1.10
+
+- group: org.jenkins-ci.ui
+  name: handlebars
+  version: 1.1.1
+
+- group: org.csanchez.jenkins.plugins
+  name: kubernetes
+  version: 1.26.2
+
+- group: org.jenkins-ci.plugins.pipeline-stage-view
+  name: pipeline-stage-view
+  version: 2.13
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-support
+  version: 3.5
+
+- group: org.jenkins-ci.plugins
+  name: jackson2-api
+  version: 2.11.1
+
+- group: org.jenkins-ci.plugins
+  name: trilead-api
+  version: 1.0.8
+
+- group: org.jenkins-ci.plugins
+  name: scm-api
+  version: 2.6.3
+
+- group: org.jenkinsci.plugins
+  name: pipeline-stage-tags-metadata
+  version: 1.7.0
+
+- group: org.jenkins-ci.plugins
+  name: bouncycastle-api
+  version: 2.18
+
+- group: org.jenkins-ci.plugins
+  name: plain-credentials
+  version: 1.7
+
+- group: org.jenkins-ci.plugins
+  name: git-server
+  version: 1.9
+
+- group: org.jenkins-ci.plugins
+  name: git-client
+  version: 3.3.0
+
+- group: org.jenkins-ci.plugins
+  name: apache-httpcomponents-client-4-api
+  version: 4.5.10-2.0
+
+- group: org.jenkins-ci.plugins
+  name: google-oauth-plugin
+  version: 1.0.0
+
+- group: org.jenkins-ci.plugins
+  name: durable-task
+  version: 1.34
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-step-api
+  version: 2.22
+
+- group: org.jenkins-ci.plugins
+  name: display-url-api
+  version: 2.3.2
+
+- group: org.jenkins-ci.plugins
+  name: credentials
+  version: 2.3.11
+
+- group: org.jenkinsci.plugins
+  name: pipeline-model-definition
+  version: 1.7.0
+
+- group: org.jenkinsci.plugins
+  name: pipeline-model-api
+  version: 1.7.0
+
+- group: org.jenkins-ci.plugins.workflow
+  name: workflow-cps
+  version: 2.81

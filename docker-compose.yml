@@ -10,5 +10,6 @@ services:
       - "50000:50000"
 
     # example showing how to use environmental variables to populate variables in jcasc configuration yaml files.
+    # see how this environmental variable is used/consumed in 1000-base.yaml
     environment:
       - "jcasc_config_version=v1.2.3"
