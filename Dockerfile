@@ -34,6 +34,7 @@ COPY plugins.txt /usr/share/jenkins/ref/
 # copy over JCASC configuration
 COPY *.yaml /usr/share/jenkins/init.jcasc.d/
 
+#generate a plugins.txt file from plugins.yaml
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 

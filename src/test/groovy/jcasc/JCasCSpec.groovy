@@ -11,11 +11,6 @@ import spock.lang.Specification
 import spock.lang.Unroll
 import groovy.io.FileType
 
-import static java.util.Collections.emptyList;
-import static java.util.Collections.singletonList;
-import org.everit.json.schema.ValidationException;
-import org.everit.json.schema.Schema;
-import org.everit.json.schema.loader.SchemaLoader;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import static io.jenkins.plugins.casc.misc.Util.validateSchema;
@@ -40,12 +35,10 @@ class JCasCSpec extends Specification {
     }
 
     @Unroll
-    void 'test script #file.name'(File file) {
+    void 'test configuration-as-code file #file.name'(File file) {
 
         given:
         def jcascConfig = new JSONObject(new JSONTokener(convertToJson(file.text)))
-        print("========> PRINTING JCASC parsed config")
-        print(jcascConfig)
 
 
         when:
@@ -61,9 +54,6 @@ class JCasCSpec extends Specification {
 
 
     //Helper functions
-
-
-
     private List<File> getJCasCFiles() {
         List<File> files = []
         new File('.').eachFileRecurse(FileType.FILES) {
